@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  reactavancado_api:
+    container_name: reactavancado_api
+    hostname: reactavancado_api
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: senha
+      POSTGRES_DB: reactavancado
+      POSTGRES_USER: strapi
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ~/.PostgressData/postgresonly/reactavancado:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
